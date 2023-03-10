@@ -10,12 +10,10 @@ function setup() {
   color4 = color(random(255), random(255), random(255));
 }
 
-//arc(x, y, w, h, start, stop, [mode], [detail])
-//start: angle at the beginning of arc (rad)
-//end: angle at the end of arc (rad)
-//mode: CHORD, PIE, OPEN
-//detail: 3D (webGL)
-//the origin can be modified with ellipseMode() (next lecture)
+//ellipseMode(CENTER): default; interpreta os dois primeiros parâmetros (x,y) de ellipse() como o centro da figura, e o terceiro e quarto parâmetros como width e height
+//ellipseMode(RADIUS): também usa os dois primeiros parâmetros como o ponto central, mas usa o terceiro e o quarto parâmetros como a METADE da width e a METADE da height
+//ellipseMode(CORNER): interpreta os dois primeiros parâmetros como a esquina superior esquerda da figura, e o terceiro e quarto parâmetros como a width e a height
+//ellipseMode(CORNERS): interpreta os dois primeiros parâmetros como a localização de uma aresta do retângulo que "contém" a elipse, e os parâmetros terceiro e quarto como a localização da aresta oposta
 
 function draw() {
   fill(color1);
