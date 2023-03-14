@@ -1,3 +1,7 @@
+//mouseDragged() es llamada cada vez que el ratón se mueve y un botón del ratón está siendo presionado
+
+let forma = true;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(160);
@@ -7,11 +11,12 @@ function setup() {
 function draw() {}
 
 function mousePressed() {
-  background(160);
+  // background(160);
+  forma = !forma;
 }
 
-function mouseMoved() {
-  if (random(1, 10) > 6) {
+function mouseDragged() {
+  if (forma) {
     let puntas = floor(random(5, 10));
     flor(puntas);
   } else {
