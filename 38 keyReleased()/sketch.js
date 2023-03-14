@@ -1,43 +1,69 @@
-//keyTyped(), key
-//
-//return false;
-
-let x, y;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(160);
-  frameRate(30);
+  frameRate(60);
   x = width / 2;
   y = height / 2;
-  circle(x, y, 20);
+  r = 100;
+  circle(x, y, r);
 }
 
 function draw() {
-  background(0);
-  circle(x, y, 20);
+  circle(x, y, r);
 }
 
-function keyTyped() {
-  if (key === 'a') {
-    x -= 5;
-  } else if (key === 's') {
-    x += 5;
-  }
+function keyPressed() {
+  // background(160);
+  r += 10;
 }
 
-function mouseWheel(event) {
-  if (event.delta > 0) {
-    pos -= 10;
-    background(map(pos, 0, windowHeight, 0, 255));
-    rect(25, pos, 350, 50);
-  } else {
-    pos += 10;
-    background(map(pos, 0, windowHeight, 0, 255));
-    rect(25, pos, 350, 50);
-  }
-  return false;
+function keyReleased() {
+  background(160);
+  r -= 5;
 }
+
+// function keyPressed() {
+//   if (keyCode === LEFT_ARROW) {
+//     if (x > 10) {
+//       x -= 5;
+//     }
+//   } else if (keyCode === RIGHT_ARROW) {
+//     if (x < width - 10) {
+//       x += 5;
+//     }
+//   } else if (keyCode === UP_ARROW) {
+//     if (y > 10) {
+//       y -= 5;
+//     }
+//   } else if (keyCode === DOWN_ARROW) {
+//     if (y < height - 10) {
+//       y += 5;
+//     }
+//   } else if (key === 'c') {
+//     x = width / 2;
+//     y = height / 2;
+//   } else {
+//     if (key >= '1' && key <= '5') {
+//       color = colores[key - 1];
+//     } else {
+//       color = 'gray';
+//     }
+//   }
+//   return false;
+// }
+
+// function mouseWheel(event) {
+//   if (event.delta > 0) {
+//     y -= 10;
+
+//     rect(25, pos, 350, 50);
+//   } else {
+//     y += 10;
+
+//     rect(25, pos, 350, 50);
+//   }
+//   return false;
+// }
 
 // function mousePressed() {
 //   if (mouseButton == RIGHT) {
